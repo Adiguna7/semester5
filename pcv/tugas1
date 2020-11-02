@@ -1,0 +1,26 @@
+What Does Youtube Do To Your Video After You Upload it
+
+Setelah video terupload dalam penyimpanan youtube, sistem youtube akan merubah format video yang berbeda2 dari tiap user menjadi format yang sama. 
+format yang digunakan untuk seluruh pengguna youtube.
+
+Format tersebut digunakan untuk mengatasi distribusi data dari video yang diupload, apabila pengguna youtube menonton format asli video yang diupload, bisa jadi video yang diupload adalah video yang beresolusi besar dan berukuran besar. hal
+tersebut dapat menimbulkan buffer yang lama, atau bahkan tidak dapat dihandle oleh internet.
+
+Jadi pada langkah pertama yang dilakukan youtube adalah menganalisa video yang telah diupload, berupa resolusi dan framerate dari video lalu youtube akan membuat salinan video tersebut dalam versi tinggi.
+setelah itu video tersebut dipecah pecah menjadi bagian-bagian kecil, setiap bagiannya berdurasi 5 detik.
+
+Bagian-bagian kecil tersebut dikomputasi pada mesin-mesin yang berbeda lalu didapatkan versi resolusi yang lebih kecil. setelah didapatkan resolusi-resolusi yang lebih kecil, bagian-bagian kecil tersebut kembali disatukan menjadi satu video. sehingga didapatlah satu video dengan resolusi-resolusi yang berbeda dan dapat dinikmati oleh pengguna. (dapat berkisar 25 output resolusi berbeda)
+
+Youtube dalam komputasinya menggunakan sistem codec untuk mengecilkan suatu video yang telah diupload, secara umumnya codec menjadikan bagian2 yang tidak mengalami banyak perubahan menjadi lebih simple dalam segi gambar.
+
+Selain dalam segi pengolahan video, youtube juga menggunakan machine learning diantaranya untuk memilih thumbnail terbaik untuk suatu video, subtitle yang diperoleh dari pengucapan dalam video, dan juga mendeteksi bagaimana isi dari suatu video agar lebih mudah dalam pencarian oleh pengguna.
+
+
+What Actually Happens When You Watch A YouTube Video?
+
+Pada saat tombol play dari video diputar, sistem youtube secara langsung akan menyediakan data video dalam bentuk bagian2, setiap bagian tersebut telah diterima oleh user, maka youtube akan menentukan kembali berapa besar bagian selanjutnya yang cocok untuk user. Hal tersebut biasa disebut adaptive bitrate. Adaptive bitrate digunakan untuk menyesuaikan bandwith dari user dengan cara menganalisis hal-hal seperti apakah jaringan dari user bagus, berapakah ukuran screen yang digunakan user, dan berapakah bagian yang telah didowload/diterima oleh user dari video tersebut. Sehingga akan meminimalisir buffer dalam pemutaran video youtube.
+
+Hal lain yang membuat pemutaran dari video youtube optimal adalah youtube bekerja sama dengan Internet Service Provider dengan menyediakan penyimpanan video sementara yang akan digunakan oleh internet service provider.
+Jadi apabila ada pengguna yang memutar suatu video, maka browser pengguna akan merequest data video ke penyimpanan dari internet service provider apabila video yang direquest ada dalam penyimpanan tersebut maka akan disajikan, jika tidak, penyimpanan tersebut akan berkomunikasi dengan penyimpanan yang menuju ke google data center.
+
+Faktor-faktor yang menyebabkan data video tidak tersedia dalam penyimpanan internet service provider adalah seperti video yang tidak populer, video 0 like dan sebagainya.
