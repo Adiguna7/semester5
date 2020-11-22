@@ -1,10 +1,6 @@
 pub fn odd_man_out(l: &[i32]) -> i32 {
     let mut mask : i32 = 0;
-    for x in l {
-        // Take advantage of the fact that xor-ing an integer with a value
-        // twice results in the original integer. So every value except for
-        // the unpaired integer should have cancelled itself out. Then take
-        // advantage of the property that x^0 == x.
+    for x in l {        
         mask ^= *x;
     }
     return mask;

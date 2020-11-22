@@ -1,23 +1,9 @@
 pub struct MinStack<T> {
-    stack: Vec<T>,
-    // Maintain a parallel stack of locations of minimum values.
-    // Whenever a value is pushed to `stack`, also push its location to `min_stack` if
-    // the value is <= the value at the top of `min_stack`.
-    // Whenever a value is popped from `stack`, also pop `min_stack` if the 
-    // position == the value at the top of `min_stack`.
+    stack: Vec<T>,    
     min_stack: Vec<usize>
 }
 
-impl<T : Ord> MinStack<T> {
-    /// Constructs a new, empty `MinStack<T>`.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// use minstack::MinStack;
-    ///
-    /// let mut stack: MinStack<i32> = MinStack::new();
-    /// ```
+impl<T : Ord> MinStack<T> {    
     #[inline]
     pub fn new() -> MinStack<T> {
         MinStack {
@@ -25,22 +11,6 @@ impl<T : Ord> MinStack<T> {
             min_stack: Vec::new()
         }
     }
-
-    /// Appends an element to end of the stack.
-    ///
-    /// # Panics
-    ///
-    /// Panics if the number of elements in the vector overflows a `usize`.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// use minstack::MinStack;
-    ///
-    /// let mut stack = MinStack::new();
-    /// stack.push(3);
-    /// assert_eq!(Some(3), stack.pop());
-    /// ```
     #[inline]
     pub fn push(&mut self, value: T) {
         let idx = self.stack.len();
@@ -54,21 +24,7 @@ impl<T : Ord> MinStack<T> {
         }
 
         self.stack.push(value);
-    }
-
-    /// Removes the last element from the stack and returns it, or `None` if it
-    /// is empty.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// use minstack::MinStack;
-    ///
-    /// let mut stack = MinStack::new();
-    /// stack.push(3);
-    /// assert_eq!(Some(3), stack.pop());
-    /// assert_eq!(None, stack.pop());
-    /// ```
+    }    
     #[inline]
     pub fn pop(&mut self) -> Option<T> {
         let value = self.stack.pop();
@@ -82,21 +38,6 @@ impl<T : Ord> MinStack<T> {
 
         value
     }
-
-    /// Returns the smallest element in the stack, or `None` if it is empty.
-    ///
-    /// # Examples
-    ///
-    /// ```
-    /// use minstack::MinStack;
-    ///
-    /// let mut stack = MinStack::new();
-    /// assert_eq!(None, stack.min());
-    /// stack.push(3);
-    /// stack.push(1);
-    /// stack.push(83);
-    /// assert_eq!(Some(&1), stack.min());
-    /// ```
     #[inline]
     pub fn min(&self) -> Option<&T> {
         self.min_stack.last().map(|&n| &self.stack[n])

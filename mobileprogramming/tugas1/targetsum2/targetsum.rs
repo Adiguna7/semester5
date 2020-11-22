@@ -1,9 +1,7 @@
 pub fn target_sum(search: &[i32], target: i32) -> Option<(i32, i32)> {
     if search.len() < 2 {
         return None;
-    }
-    // For some reason hash tables are not allowed so sort the vector and
-    // search from the ends.
+    }    
     let mut sorted_search = search.to_vec();
     sorted_search.sort();
     let mut lowest_index = 0;

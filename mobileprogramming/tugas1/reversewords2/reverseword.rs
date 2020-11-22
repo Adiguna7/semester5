@@ -1,19 +1,4 @@
-// use std::ascii::AsciiExt;
-
 const SPACE: u8 = b' ';
-
-/// Reverse the words in the input string. Words are defined as any characters
-/// other than a space. Only ASCII input is acceptable.
-///
-/// # Examples
-///
-/// ```
-/// use reversewords::ascii_reverse_words;
-///
-/// let mut s = "Hello from Rust!".to_string();
-/// ascii_reverse_words(&mut s);
-/// assert_eq!("Rust! from Hello", s)
-/// ```
 #[inline]
 pub fn ascii_reverse_words(s: &mut String) {
     let len = s.len();
@@ -21,20 +6,14 @@ pub fn ascii_reverse_words(s: &mut String) {
         return;
     }
 
-    if !s.is_ascii() {
-        // Reversing non-ASCII strings is hard because you have to make sure
-        // not to spit graphemes.
+    if !s.is_ascii() {        
         panic!("Unexpected non-ASCII string: \"{}\"", s);
     }
 
     unsafe {
-        let ref mut bytes = s.as_mut_vec();  // Unsafe.
-        // Reverse the entire string. So:
-        // "Hello from Rust!" => "!tsuR morf olleH"
+        let ref mut bytes = s.as_mut_vec();  // Unsafe.        
         bytes.reverse();
-
-        // Find each "word" (non-space) in `bytes` and reverse it. So
-        // "!tsuR" => "Rust1".
+        
         let mut left = 0;
         while left < len {
             if bytes[left] == SPACE {

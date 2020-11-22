@@ -1,6 +1,4 @@
-pub fn has_substring(search: &str, find: &str) -> bool {
-    // Any non-brute-force algorithm would be too difficult to implement in an
-    // interview without reference so implement the naive O(nm) solution.
+pub fn has_substring(search: &str, find: &str) -> bool {    
     if search.is_empty() {
         return find.is_empty();
     }

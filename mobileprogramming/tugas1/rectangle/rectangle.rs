@@ -4,21 +4,13 @@ struct Rectangle {
     height: u32,
 }
 
-impl Rectangle {
-    // associated function, not method
-    // call with :: syntax
+impl Rectangle {    
     fn square(size: u32) -> Rectangle {
         Rectangle { width: size, height: size }
-    }
-
-    // method
-    // call with . syntax
+    }    
     fn area(&self) -> u32 {
         self.width * self.height
-    }
-
-    // method
-    // call with . syntax
+    }    
     fn can_hold(&self, r2: &Rectangle) -> bool {
         self.width > r2.width && self.height > r2.height
     }
